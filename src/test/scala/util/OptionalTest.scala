@@ -2,7 +2,7 @@ package util
 
 import org.junit.*
 import org.junit.Assert.*
-import util.Optionals.Optional.*
+import it.unibo.pps.util.Optionals.Optional.*
 class OptionalTest:
   @Test
   def testFlatMap(): Unit =

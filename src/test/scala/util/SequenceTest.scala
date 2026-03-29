@@ -2,8 +2,8 @@ package util
 
 import org.junit.*
 import org.junit.Assert.*
-import util.Optionals.Optional.*
-import util.Sequences.Sequence
+import it.unibo.pps.util.Optionals.Optional.*
+import it.unibo.pps.util.Sequences.Sequence
 class SequenceTest:
   @Test
   def testConcat(): Unit =

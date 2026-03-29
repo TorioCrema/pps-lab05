@@ -2,8 +2,8 @@ package util
 
 import org.junit.*
 import org.junit.Assert.*
-import util.Streams.Stream
-import util.Sequences.Sequence
+import it.unibo.pps.util.Streams.Stream
+import it.unibo.pps.util.Sequences.Sequence
 class StreamTest:
   @Test
   def testTake: Unit =
