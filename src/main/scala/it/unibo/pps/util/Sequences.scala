@@ -37,6 +37,8 @@ object Sequences: // Essentially, generic linkedlists
         case _ => Nil()
 
       def map[B](f: A => B): Sequence[B] = sequence.flatMap(x => Cons(f(x), Nil()))
+      
+      def withFilter(q: A => Boolean): Sequence[A] = sequence.filter(q)
 
       def filter(f: A => Boolean): Sequence[A] = sequence.flatMap:
         case x if f(x) => Cons(x, Nil())
@@ -51,6 +53,10 @@ object Sequences: // Essentially, generic linkedlists
 
       def reverse(): Sequence[A] = sequence match
         case Cons(h, t) => t.reverse().concat(Cons(h, Nil()))
+        case _ => Nil()
+        
+      def distinct(): Sequence[A] = sequence match
+        case Cons(h, t) => Cons(h, t.filter(_ != h).distinct())
         case _ => Nil()
 @main def trySequences =
   import Sequences.* 

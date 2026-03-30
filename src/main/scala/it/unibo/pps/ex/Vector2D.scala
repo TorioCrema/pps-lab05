@@ -41,7 +41,7 @@ object Vector2D:
  *   - Observe how equality (==) and toString now work correctly out-of-the-box.
  */
 
-class Vector2DImpl(val x: Double, val y: Double) extends Vector2D:
+case class Vector2DImpl(x: Double, y: Double) extends Vector2D:
   def +(other: Vector2D): Vector2D = Vector2DImpl(x + other.x, y + other.y)
 
   override def -(other: Vector2D): Vector2D = Vector2DImpl(x - other.x, y - other.y)
@@ -89,3 +89,7 @@ class Vector2DImpl(val x: Double, val y: Double) extends Vector2D:
   // sum * 3.0 = (6.0, 18.0)
   // (6.0, 18.0) - (1.0, 1.0) = (5.0, 17.0)
   println(s"Multiple Ops: $multipleOps, x: ${multipleOps.x}, y: ${multipleOps.y}")
+
+  println(v1 == v2)
+  val v3: Vector2D = Vector2D(3.0, 4.0)
+  println(v1 == v3)
