@@ -58,6 +58,11 @@ object Sequences: // Essentially, generic linkedlists
       def distinct(): Sequence[A] = sequence match
         case Cons(h, t) => Cons(h, t.filter(_ != h).distinct())
         case _ => Nil()
+
+      def len(): Int = sequence match
+        case Cons(h, t) => 1 + t.len()
+        case _ => 0
+
 @main def trySequences =
   import Sequences.* 
   val sequence = Sequence(1, 2, 3)
