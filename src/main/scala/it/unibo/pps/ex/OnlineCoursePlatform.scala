@@ -194,9 +194,7 @@ case class OnlineCoursePlatformImpl() extends OnlineCoursePlatform:
    * @return true if the student is enrolled, false otherwise.
    */
   override def isStudentEnrolled(studentId: String, courseId: String): Boolean =
-    !this.enrollments
-      .find(_ == (studentId, courseId))
-      .isEmpty
+    !this.enrollments.find(_ == (studentId, courseId)).isEmpty
 
 @main def mainPlatform(): Unit =
   val platform = OnlineCoursePlatform()
